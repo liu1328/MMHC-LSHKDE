@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-
 from condition_independence_test import cond_indep_test
 from subsets import subsets
 
@@ -90,22 +89,3 @@ def MMPC(data, target, alpha):
                     breakFlag = True
                     break
     return list(set(CPC))
-
-import networkx as nx
-from matplotlib import pyplot as plt
-from network import Graph_Matrix
-
-# if __name__ == '__main__':
-#     # Read in the data
-#     data = pd.read_csv('C:\\Users\\kkk\\Downloads\\pyCausalFS\\pyCausalFS1\\pyCausalFS\\GSL\\MMHC\\Besian\\data1000')
-#     _, kvar = np.shape(data)
-#     DAG = np.zeros((kvar, kvar))
-#     adjacency_matrix = np.zeros((kvar, kvar))
-#     alpha = 0.01
-#     pc = {}
-#     for tar in range(kvar):
-#         print("tar", tar)
-#         pc_mm = MMPC(data, tar, alpha)
-#         # 把MMPC的结果转换成字符串存入PC中
-#         pc[str(tar)] = [str(i) for i in pc_mm]
-#     print(pc)
