@@ -8,6 +8,8 @@ Directed: Using a search algorithm and scoring function.
 
 network: Draw the network structure.
 
-MMPC: Mainly identifies the network skeleton.
-MMHC: Orientation is based on the network skeleton.
+MMPC-LSHKDE: Mainly identifies the network skeleton.
+
+MMHC-LSHKDE: Orientation is based on the network skeleton.
+
 BNC: Bayesian network classifier constructed by MMHC-LSHKDE
