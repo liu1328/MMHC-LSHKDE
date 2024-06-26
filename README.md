@@ -1,5 +1,5 @@
 # Introduction
-This project includes the structural learning of Bayesian networks and the classifier of Bayesian networks.
+This project includes the structural learning of Bayesian networks and the classifier of Bayesian networks, with dataset.
 
 
 MILSH-KDE: Mainly for the calculation of mutual information and conditional mutual information.
