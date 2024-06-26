@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import KFold
-from MMHC import MMHC
+from MMHC-LSHKDE import MMHC
 from LSH_KDE import FastLaplacianKDE
 data = pd.read_csv('C:\\Users\\kkk\\Downloads\\dataset\\iris.csv')
 data = np.array(data)
