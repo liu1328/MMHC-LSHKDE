@@ -2,7 +2,7 @@ import networkx as nx
 from matplotlib import pyplot as plt
 from network import Graph_Matrix
 from Directed import hc
-from MMPC import MMPC
+from MMPC-LSHKDE import MMPC
 import numpy as np
 
 def symmetry(pc):
@@ -49,7 +49,7 @@ import pandas as pd
 
 if __name__ == '__main__':
     # Read in the data
-    data = pd.read_csv('C:\\Users\\kkk\\Downloads\\pyCausalFS\\pyCausalFS1\\pyCausalFS\\GSL\\MMHC\\Besian\\data1000')
+    data = pd.read_csv('C:\\Users\\kkk\\data1000')
     DAG = MMHC(data)
     print(DAG)
     a = DAG.shape[0]
