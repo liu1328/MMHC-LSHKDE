@@ -5,14 +5,6 @@ from Directed import hc
 from MMPC-LSHKDE import MMPC
 import numpy as np
 
-def symmetry(pc):
-    """Check the symmetry of the PC to remove false positives"""
-    for var in pc:
-        for par in pc[var]:
-            if var not in pc[par]:
-                pc[par].append(var)
-    return pc
-
 
 def MMHC(data, alpha=0.01):
     """
@@ -31,8 +23,6 @@ def MMHC(data, alpha=0.01):
     for tar in range(kvar):
         pc_mm = MMPC(data, tar, alpha)
         pc[str(tar)] = [str(i) for i in pc_mm]
-
-    pc = symmetry(pc)
 
     # Use conditional entropy to set the direction
     dag_dict = hc(data, pc)
