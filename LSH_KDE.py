@@ -1,5 +1,4 @@
 import math
-from collections import defaultdict
 import numpy as np
 
 def Gaussian_kernel(x, y, bandwidth):
@@ -63,7 +62,7 @@ class FastGaussianKDE:
         self.dimension = dataset.shape[1]
         self.bandwidth = bandwidth
         self.L = L
-        # ensuring that each hash function uses a different size of sample.
+        
         self.sizes = np.random.binomial(self.n_points, L * 1. / self.n_points, self.L)
         random_samples = [np.random.choice(self.n_points, self.sizes[j], replace=False) for j in range(self.L)]
 
@@ -78,11 +77,9 @@ class FastGaussianKDE:
             bins = defaultdict(list)
             for i in random_samples[j]:
                 point = dataset[i, :]
-                # add the data points to the corresponding hash bucket.
-                bins[self.lshs[j].hash(point)].append(point)
             self.hashed_points.append(bins)
 
-    def kde(self, query,bandwidth):
+    def kde(self, query):
         estimators = []
         dimension = len(query)
         for j in range(self.L):
